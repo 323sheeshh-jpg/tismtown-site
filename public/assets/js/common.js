@@ -103,6 +103,21 @@ window.addEventListener('scroll', setActiveNavigation, {
 window.addEventListener('hashchange', setActiveNavigation);
 window.addEventListener('load', setActiveNavigation);
 
+window.addEventListener('load', () => {
+  if (!window.location.hash) return;
+
+  const target = document.querySelector(window.location.hash);
+
+  if (target) {
+    setTimeout(() => {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 50);
+  }
+});
+
 document.querySelectorAll('.cast-card').forEach((card) => {
   const video = card.querySelector('video');
 
