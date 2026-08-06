@@ -18,6 +18,24 @@ window.CAST_DATA = [
     ]
   },
   {
+    "slug": "lillie",
+    "name": "Lillie",
+    "member": "Sarah",
+    "role": "Server Director",
+    "image": "assets/images/lillie.png",
+    "video": "assets/video/lillie-preview.mp4",
+    "bio": "Guides the city, staff, events, and creative direction while helping members build characters with enough room to actually grow.",
+    "character": "Lillie",
+    "known": "Server direction, events, cinematic roleplay",
+    "since": "Founding Cast",
+    "quote": "The best scenes are the ones nobody wants to end.",
+    "tags": [
+      "Director",
+      "Creator",
+      "Cast"
+    ]
+  },
+  {
     "slug": "misty",
     "name": "Misty",
     "member": "Angie",
@@ -53,22 +71,5 @@ window.CAST_DATA = [
       "Standards"
     ]
   },
-  {
-    "slug": "lillie",
-    "name": "Lillie",
-    "member": "Sarah",
-    "role": "Server Director",
-    "image": "assets/images/lillie.png",
-    "video": "assets/video/lillie-preview.mp4",
-    "bio": "Guides the city, staff, events, and creative direction while helping members build characters with enough room to actually grow.",
-    "character": "Lillie",
-    "known": "Server direction, events, cinematic roleplay",
-    "since": "Founding Cast",
-    "quote": "The best scenes are the ones nobody wants to end.",
-    "tags": [
-      "Director",
-      "Creator",
-      "Cast"
-    ]
-  }
+  
 ];
