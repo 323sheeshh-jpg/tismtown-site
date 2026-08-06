@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cast Profile | Tism Town Studios</title>
+<link rel="icon" href="assets/images/smiley-small.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
+<header class="topbar"><a class="brand" href="index.html"><img src="assets/images/smiley.png"><span><strong>TISM TOWN</strong><small>STUDIOS</small></span></a><button class="menu-button"><span></span><span></span><span></span></button><nav class="nav"><a href="index.html">Home</a><a class="active" href="cast.html">Cast</a><a href="index.html#creators">Creators</a><a href="index.html#challenge">Director's Challenge</a><a href="index.html#memberships">Memberships</a></nav></header>
+<main class="wrap profile-shell"><section class="profile-hero"><video id="profile-video" autoplay muted loop playsinline></video><div class="profile-content"><img id="profile-image" class="profile-portrait"><div class="profile-copy"><div class="eyebrow">CAST PROFILE</div><h1 id="profile-name"></h1><div class="role" id="profile-role"></div><p id="profile-bio"></p><div class="tag-row" id="profile-tags"></div><div class="actions"><a class="button primary" href="cast.html">Back to Cast</a><button class="button secondary" id="sound-toggle">Play Sound</button></div></div></div></section>
+<section class="profile-details"><article class="detail"><small>CHARACTER</small><strong id="detail-character"></strong></article><article class="detail"><small>MEMBER</small><strong id="detail-member"></strong></article><article class="detail"><small>KNOWN FOR</small><strong id="detail-known"></strong></article><article class="detail"><small>CAST STATUS</small><strong id="detail-since"></strong></article></section>
+<section class="section"><div class="section-heading"><div><div class="eyebrow">CHARACTER ARCHIVE</div><h2>Lore, stories, businesses, clips, and history.</h2></div><p>This is where each member's profile grows over time. The template is ready for galleries, episode links, relationship maps, businesses, awards, and Director's Challenge appearances.</p></div><div class="standard-grid"><article class="standard-card"><span>01</span><h3>Character Lore</h3><p>Long-form biography, origin, personality, goals, conflicts, and current story direction.</p></article><article class="standard-card"><span>02</span><h3>Story Timeline</h3><p>Major scenes, relationships, businesses, events, episodes, and changes over time.</p></article><article class="standard-card"><span>03</span><h3>Creator Links</h3><p>Twitch, YouTube, TikTok, latest streams, episodes, clips, and live status.</p></article></div></section>
+</main><footer class="wrap"><div class="brand"><img src="assets/images/smiley.png"><span><strong>TISM TOWN STUDIOS</strong><small>CAST ARCHIVE</small></span></div><p>© <span data-year></span> Tism Town.</p></footer>
+<script src="assets/js/cast-data.js"></script><script>
+const slug=new URLSearchParams(location.search).get('cast')||'marshall';
+const person=CAST_DATA.find(p=>p.slug===slug)||CAST_DATA[0];
+document.title=`${person.name} | Tism Town Cast`;
+document.getElementById('profile-video').src=person.video;
+document.getElementById('profile-image').src=person.image;
+document.getElementById('profile-name').textContent=person.name;
+document.getElementById('profile-role').textContent=person.role;
+document.getElementById('profile-bio').textContent=person.bio;
+document.getElementById('detail-character').textContent=person.character;
+document.getElementById('detail-member').textContent=person.member;
+document.getElementById('detail-known').textContent=person.known;
+document.getElementById('detail-since').textContent=person.since;
+document.getElementById('profile-tags').innerHTML=person.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+const v=document.getElementById('profile-video');const b=document.getElementById('sound-toggle');
+b.addEventListener('click',()=>{v.muted=!v.muted;b.textContent=v.muted?'Play Sound':'Mute Sound';});
+</script><script src="assets/js/common.js"></script></body></html>
